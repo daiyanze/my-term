@@ -8,9 +8,11 @@ My good-looking productive terminal environment integration for MacOS with an ea
 - Multiplexer: [Tmux](https://github.com/tmux/tmux)
 
 ## Screenshots
-![snapshot](./snapshot_1.png)
+![snapshot](./media/snapshot_1.png)
 
 ## One Command Install
+(TODO) Update install script
+
 This command will backup the existed config files.
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/daiyanze/my-term/master/install.sh)
@@ -23,17 +25,15 @@ The Neovim version should be higher than 0.5.
 The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim). Added some personal favor customizations.
 
 ##### Theme:
-The default theme of [LunarVim](https://github.com/ChristianChiarulli/LunarVim) is Lunar. I changed it into Gruvbox via these plugins [npxbr/gruvbox.nvim](https://github.com/npxbr/gruvbox.nvim) and [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim).
+The default theme of [LunarVim](https://github.com/ChristianChiarulli/LunarVim) is `Lunar`. I've changed it to the default Neovim Gruvbox.
+
 
 ##### Plugins:
-- [nvim-scrollview](https://github.com/dstein64/nvim-scrollview):
-- [neoscroll.nvim](https://github.com/neoscroll.nvim):
-- [neovim tagbar](https://github.com/preservim/tagbar):
-- [Jenkinsfile syntax](https://github.com/martinda/Jenkinsfile-vim-syntax):
-- [vim visual multi](https://github.com/mg979/vim-visual-multi):
-- [nvim dap ui](https://github.com/rcarriga/nvim-dap-ui):
-- [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim):
-- [npxbr/gruvbox.nvim](https://github.com/npxbr/gruvbox.nvim):
+- [nvim-scrollview](https://github.com/dstein64/nvim-scrollview): Displays a scrollbar
+- [neoscroll.nvim](https://github.com/neoscroll.nvim): Makes scrolling much smoother
+- [neovim tagbar](https://github.com/preservim/tagbar): To browse the tags of the current file. This requires collaboration with [ctags-exuberant](https://formulae.brew.sh/formula/ctags#default).
+- [Jenkinsfile syntax](https://github.com/martinda/Jenkinsfile-vim-syntax): Helps highlight Groovy syntax in Jenkinsfile
+- [vim visual multi](https://github.com/mg979/vim-visual-multi): A multiple text selector
 
 ### Tmux
 ##### Theme:
