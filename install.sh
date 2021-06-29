@@ -69,6 +69,7 @@ echo ''
 # brew install --cask font-fira-code-nerd-font
 # brew install goenv
 # brew install ctags
+# brew install ccat
 
 # set git pager to "cat" to print out output and exit the program
 # https://stackoverflow.com/questions/9483757/how-to-exit-git-log-or-git-diff
