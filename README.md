@@ -36,8 +36,6 @@ The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/L
 ##### Plugins:
 
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview): Displays a scrollbar
-- [neoscroll.nvim](https://github.com/neoscroll.nvim): Makes scrolling much smoother
-- [neovim tagbar](https://github.com/preservim/tagbar): To browse the tags of the current file. This requires collaboration with [ctags-exuberant](https://formulae.brew.sh/formula/ctags#default).
 - [Jenkinsfile syntax](https://github.com/martinda/Jenkinsfile-vim-syntax): Helps highlight Groovy syntax in Jenkinsfile
 - [vim visual multi](https://github.com/mg979/vim-visual-multi): A multiple text selector
 
