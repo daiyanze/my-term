@@ -2,6 +2,7 @@
 My good-looking productive terminal environment integration for MacOS with an easy installation.
 
 ## Components
+- Package Manager: [Homebrew](https://brew.sh)
 - Editor: [Neovim (> 0.5)](https://neovim.io)
 - Shell: [Zsh](https://www.zsh.org) + [Oh-My-Zsh](https://ohmyz.sh)
 - Shell Theme: [Powerlevel10k](https://github.com/romkatv/powerlevel10k) -- pure
@@ -23,6 +24,7 @@ bash <(curl -s https://raw.githubusercontent.com/daiyanze/my-term/master/install
 ### Neovim
 The Neovim version should be higher than 0.5.
 The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim). Added some personal favor customizations.
+
 
 ##### Theme:
 The default theme of [LunarVim](https://github.com/ChristianChiarulli/LunarVim) is `Lunar`. I've changed it to the default Neovim Gruvbox.
