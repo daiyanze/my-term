@@ -33,15 +33,11 @@ bash <(curl -s https://raw.githubusercontent.com/daiyanze/my-term/master/install
 The Neovim version should be higher than 0.5.
 The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim). Added some personal favor customizations.
 
-##### Plugins:
-
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview): Displays a scrollbar
 - [Jenkinsfile syntax](https://github.com/martinda/Jenkinsfile-vim-syntax): Helps highlight Groovy syntax in Jenkinsfile
 - [vim visual multi](https://github.com/mg979/vim-visual-multi): A multiple text selector
 
 ### Tmux
-
-##### Plugins:
 
 - [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm): Helps manages the Tmux plugins
 - [Tmux sensible](https://github.com/tmux-plugins/tmux-sensible): Basic Tmux settings everyone can agree on
