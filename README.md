@@ -5,7 +5,7 @@ My good-looking productive terminal environment integration for MacOS with an ea
 ## Components
 
 - Package Manager: [Homebrew](https://brew.sh)
-- Editor: [Neovim (> 0.5)](https://neovim.io)
+- Editor: [Neovim (>= 0.5)](https://neovim.io)
 - Editor Configuration: [LunarVim](https://github.com/ChristianChiarulli/LunarVim) -- Gruvbox
 - Shell: [Zsh](https://www.zsh.org) + [Oh-My-Zsh](https://ohmyz.sh)
 - Shell Theme: [Powerlevel10k](https://github.com/romkatv/powerlevel10k) -- pure
