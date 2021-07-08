@@ -23,11 +23,6 @@ require("which-key").register(
 -- Custom Plugins
 require("packer").use('dstein64/nvim-scrollview')
 require("packer").use('preservim/tagbar')
-require("packer").use('karb94/neoscroll.nvim')
-require("neoscroll").setup()
 require("packer").use('martinda/Jenkinsfile-vim-syntax')
 require("packer").use('mg979/vim-visual-multi')
-
--- Theme Gruvbox
-vim.cmd([[colorscheme gruvbox]])
 
