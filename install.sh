@@ -36,21 +36,15 @@ backup () {
 
 # install homebrew
 install_homebrew () {
-    echo 'Installing homebrew...'
+    command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
-    if [ ! -f '/usr/local/bin/brew' ]; then
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-    
     # packages
     brew install neovim --HEAD
-    brew install --HEAD universal-ctags/universal-ctags/universal-ctags
     brew install lua \
         node \
-        yarn \
         ripgrep \
         fzf \
-        ranger \
         tmux \
         ccat \
         goenv \
@@ -104,14 +98,6 @@ install_lunarvim () {
     sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
 }
 
-# Some customized settings
-customize () {
-    # set git pager to "cat" to print out output and exit the program
-    # https://stackoverflow.com/questions/9483757/how-to-exit-git-log-or-git-diff
-    echo 'set git pager to "cat"'
-    git config --global core.pager cat
-}
-
 # Locate config files
 setup_configs () {
     # zshrc
@@ -132,7 +118,7 @@ setup_configs () {
 }
 
 # Install Start Message
-echo 'Installing My Tmux config...'
+echo 'Installing My Term...'
 echo ''
 
 # Installation Processes
@@ -145,7 +131,6 @@ echo ''
 echo ''
 
 # Setups
-customize
 setup_configs
 
 # Post-install Instructions
@@ -156,14 +141,11 @@ echo '   To complete installation'
 echo '=============================='
 
 echo '--- Tmux ---'
-echo "press <Prefix> + I (capital) to fetch the plugins ($HOME/.tmux/plugins) after first-time of entering Tmux."
+echo "press <Prefix> + I (capital) to fetch the plugins ($HOME/.tmux/plugins) for the first-time of entering Tmux."
 echo '------------'
 echo ''
 
 echo '--- Neovim ---'
-echo "Make sure to add the following line to the file: $HOME/.config/nvim/init.lua"
-echo ''
-echo "  vim.cmd('luafile ~/.config/my-term/nvim/nvim.config.lua')"
-echo ''
-echo "Then install the plugins using ':PackerInstall' after opening up Neovim"
+echo "enter ':PackerInstall' to install the plugins for the first-time of entering Neovim"
 echo '---------------'
+
