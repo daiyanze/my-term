@@ -41,19 +41,21 @@ install_homebrew () {
 
     # packages
     brew install neovim --HEAD
-    brew install lua \
-        node \
-        ripgrep \
-        fzf \
-        tmux \
-        ccat \
-        goenv \
-        pyenv \
-        efm-langserver
+    # Refered to https://github.com/universal-ctags/homebrew-universal-ctags
+    brew tap universal-ctags/universal-ctags
+    brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
+    # Fira-code
     brew tap homebrew/cask-fonts
     brew install --cask font-fira-code
     brew install --cask font-fira-code-nerd-font
+
+    brew install lua \
+        ripgrep \
+        fzf \
+        tmux \
+        efm-langserver
+
 }
 
 # install oh-my-zsh
@@ -96,6 +98,11 @@ install_tmux_plugin_manager () {
 # install lunarvim
 install_lunarvim () {
     sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
+}
+
+# install my-term
+install_my_term () {
+    git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
 }
 
 # Locate config files

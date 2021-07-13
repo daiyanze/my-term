@@ -1,3 +1,5 @@
+-- Settings
+O.lang.tsserver.autoformat = false
 
 -- Theme Gruvbox
 O.colorscheme = 'gruvbox'
@@ -11,6 +13,14 @@ O.lang.tsserver.autoformat = true
 O.user_plugins = {
   {'dstein64/nvim-scrollview'},
   {'martinda/Jenkinsfile-vim-syntax'},
-  {'mg979/vim-visual-multi'}
+  {'mg979/vim-visual-multi'},
+  {'andymass/vim-matchup'},
+  {'liuchengxu/vista.vim'},
+  {'itchyny/vim-cursorword',
+    event = {"BufEnter", "BufNewFile"}
+  },
+  {"kana/vim-niceblock",
+    opt = true
+  }
 }
 
