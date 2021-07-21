@@ -54,8 +54,10 @@ install_homebrew () {
         ripgrep \
         fzf \
         tmux \
-        efm-langserver
-
+        efm-langserver \
+        lazygit \
+        gnu-sed \
+        brew install ripgrep
 }
 
 # install oh-my-zsh
@@ -96,8 +98,10 @@ install_tmux_plugin_manager () {
 }
 
 # install lunarvim
+# FIXME: Use rolling for now
 install_lunarvim () {
-    sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
+    # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
+    LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
 }
 
 # install my-term
@@ -115,8 +119,8 @@ setup_configs () {
     ln -s -f $HOME/.config/my-term/tmux/.tmux.conf $HOME/.tmux.conf
     echo "Created symlink to $HOME/.tmux.conf"
 
-    # neovim
-    ln -s -f $HOME/.config/my-term/nvim/lv-config.lua $HOME/.config/nvim/lv-config.lua
+    # lunarvim (neovim)
+    ln -s -f $HOME/.config/my-term/nvim/lv-config.lua $HOME/.config/lvim/lv-config.lua
     echo "Created symlink to $HOME/.config/nvim/lv-config.lua"
 
     # powerlevel10k
