@@ -7,8 +7,7 @@ O.colorscheme = 'gruvbox-material'
 
 -- Javascript
 O.lang.tsserver.formatter = 'prettier'
-O.lang.tsserver.linter = nil
-O.lang.tsserver.autoformat = false
+O.lang.tsserver.linter = 'eslint'
 
 -- Custom Plugins
 O.user_plugins = {
