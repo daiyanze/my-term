@@ -45,11 +45,6 @@ install_homebrew () {
     brew tap universal-ctags/universal-ctags
     brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
-    # Fira-code
-    brew tap homebrew/cask-fonts
-    brew install --cask font-fira-code
-    brew install --cask font-fira-code-nerd-font
-
     brew install lua \
         ripgrep \
         fzf \
