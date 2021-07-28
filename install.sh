@@ -116,7 +116,7 @@ setup_configs () {
 
     # lunarvim (neovim)
     ln -s -f $HOME/.config/my-term/nvim/lv-config.lua $HOME/.config/lvim/lv-config.lua
-    echo "Created symlink to $HOME/.config/nvim/lv-config.lua"
+    echo "Created symlink to $HOME/.config/lvim/lv-config.lua"
 
     # powerlevel10k
     ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
