@@ -23,16 +23,17 @@ colors.alt_bg = '#32302f' -- bg_statusline1
 -- Custom Plugins
 lvim.plugins = {
   -- Theme
-  {'sainnhe/gruvbox-material', opt = true},
+  {'sainnhe/gruvbox-material'},
   -- Utils
   {'dstein64/nvim-scrollview'},
   {'martinda/Jenkinsfile-vim-syntax'},
   {'mg979/vim-visual-multi'},
+  {'mattn/emmet-vim'},
   {'jeffkreeftmeijer/vim-numbertoggle'},
   {'lukas-reineke/indent-blankline.nvim'},
   {'onsails/lspkind-nvim'},
   {'kdheepak/lazygit.nvim'},
-  {'sindrets/diffview.nvim'},
+  -- {'sindrets/diffview.nvim'},
   {'windwp/nvim-spectre'},
   {'nacro90/numb.nvim',
     config = function()

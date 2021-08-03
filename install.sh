@@ -115,8 +115,8 @@ setup_configs () {
     echo "Created symlink to $HOME/.tmux.conf"
 
     # lunarvim (neovim)
-    ln -s -f $HOME/.config/my-term/nvim/lv-config.lua $HOME/.config/lvim/lv-config.lua
-    echo "Created symlink to $HOME/.config/lvim/lv-config.lua"
+    ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/lvim/config.lua
+    echo "Created symlink to $HOME/.config/lvim/config.lua"
 
     # powerlevel10k
     ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
@@ -151,7 +151,7 @@ echo "press <Prefix> + I (capital) to fetch the plugins ($HOME/.tmux/plugins) fo
 echo '------------'
 echo ''
 
-echo '--- Neovim ---'
+echo '--- Neovim(Lunarvim) ---'
 echo "enter ':PackerInstall' to install the plugins for the first-time of entering Neovim"
 echo '---------------'
 
