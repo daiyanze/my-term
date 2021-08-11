@@ -52,7 +52,7 @@ install_homebrew () {
         efm-langserver \
         lazygit \
         gnu-sed \
-        brew install ripgrep
+        ripgrep
 }
 
 # install oh-my-zsh
@@ -96,7 +96,7 @@ install_tmux_plugin_manager () {
 # FIXME: Use rolling for now
 install_lunarvim () {
     # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
-    LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
+    LVBRANCH=rolling sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)"
 }
 
 # install my-term
