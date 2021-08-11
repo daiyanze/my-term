@@ -60,8 +60,8 @@ $ git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
 
 # Setup symlink to the config files
 $ ln -s -f $HOME/.config/my-term/zsh/zshrc.config $HOME/.zshrc
-$ ln -s -f $HOME/.config/my-term/tmux/.tmux.conf $HOME/.tmux.conf
-$ ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/nvim/config.lua
+$ ln -s -f $HOME/.config/my-term/tmux/tmux.conf $HOME/.tmux.conf
+$ ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/lvim/config.lua
 $ ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
 ```
 

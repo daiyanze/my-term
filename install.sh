@@ -111,7 +111,7 @@ setup_configs () {
     echo "Created symlink to $HOME/.zshrc"
 
     # tmux
-    ln -s -f $HOME/.config/my-term/tmux/.tmux.conf $HOME/.tmux.conf
+    ln -s -f $HOME/.config/my-term/tmux/tmux.conf $HOME/.tmux.conf
     echo "Created symlink to $HOME/.tmux.conf"
 
     # lunarvim (neovim)
