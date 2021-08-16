@@ -24,7 +24,7 @@ Make sure to install [Node.js](https://nodejs.org/) and [Golang](https://golang.
 
 ### One Command Install
 
-This command will backup the existed config files.
+This command will backup the existed config files. It will prompt for a sudo password during the installation.
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/daiyanze/my-term/master/install.sh)
@@ -64,6 +64,40 @@ $ ln -s -f $HOME/.config/my-term/tmux/tmux.conf $HOME/.tmux.conf
 $ ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/lvim/config.lua
 $ ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
 ```
+
+### Uninstall
+
+To remove the related configurations, simply use the shell script comes within the repo.
+
+```sh
+$ sh $HOME/.config/my-term/uninstall.sh
+```
+
+Or do it manually.
+
+```sh
+# Lunarvim
+# It can be removed by its own script
+$ sh $HOME/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+
+# Oh my zsh
+$ rm -rf $HOME/.oh-my-zsh
+
+# Tmux
+$ rm -rf $HOME/.tmux
+
+
+# Symbolic Links
+# Tmux 
+unlink $HOME/.tmux.conf
+
+# Power10k
+unlink $HOME/.p10k.zsh
+
+# Oh my zsh
+unlink $HOME/.zshrc
+```
+
 
 ## Customizations & Plugins for each of the "Components"
 

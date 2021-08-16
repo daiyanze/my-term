@@ -95,6 +95,8 @@ install_tmux_plugin_manager () {
 # install lunarvim
 # FIXME: Use rolling for now
 install_lunarvim () {
+    # FIXME: On some OS (e.g Big Sur), /usr/local/bin/ doesn't exist
+    sudo mkdir -p /usr/local/bin
     # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
     LVBRANCH=rolling sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)"
 }
