@@ -5,9 +5,8 @@ set -o errexit
 
 # create backup folder and move the existed configs
 backup () {
-    echo 'Moving to backup folder'
     bkp_dir=$HOME/.my-term.bkp."$(date '+%Y%m%d%H%M%S')"
-    mkdir $bkp_dir
+    mkdir -p $bkp_dir
 
     # backup nvim
     if [ -d $HOME/.config/nvim ]; then
@@ -32,6 +31,27 @@ backup () {
         mv $HOME/.p10k.zsh $bkp_dir/
         echo "=== Moved .p10k.zsh to backup folder $bkp_dir ==="
     fi
+
+    if [ -z "$(ls -A $bkp_dir)" ]; then
+        echo 'All files backup done.'
+    else
+        rm -rf $bkp_dir
+    fi 
+}
+
+# install my-term
+install_my_term () {
+    rm -rf $HOME/.config/my-term
+    git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
+}
+
+# install lunarvim
+# FIXME: Use rolling for now
+install_lunarvim () {
+    # FIXME: On some OS (e.g Big Sur), /usr/local/bin/ doesn't exist
+    sudo mkdir -p /usr/local/bin
+    # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
+    LVBRANCH=rolling sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)"
 }
 
 # install homebrew
@@ -40,10 +60,10 @@ install_homebrew () {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
     # packages
-    brew install neovim --HEAD
+    brew install neovim
     # Refered to https://github.com/universal-ctags/homebrew-universal-ctags
-    brew tap universal-ctags/universal-ctags
-    brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+    # brew tap universal-ctags/universal-ctags
+    # brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
     brew install lua \
         ripgrep \
@@ -60,7 +80,7 @@ install_oh_my_zsh () {
     echo 'Installing oh-my-zsh...'
 
     if [ ! -d $HOME/.oh-my-zsh ]; then
-        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
     fi
 
     # zsh plugins
@@ -92,20 +112,6 @@ install_tmux_plugin_manager () {
     fi
 }
 
-# install lunarvim
-# FIXME: Use rolling for now
-install_lunarvim () {
-    # FIXME: On some OS (e.g Big Sur), /usr/local/bin/ doesn't exist
-    sudo mkdir -p /usr/local/bin
-    # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
-    LVBRANCH=rolling sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)"
-}
-
-# install my-term
-install_my_term () {
-    git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
-}
-
 # Locate config files
 setup_configs () {
     # zshrc
@@ -131,10 +137,11 @@ echo ''
 
 # Installation Processes
 backup
+install_my_term
+install_lunarvim
 install_homebrew
 install_oh_my_zsh
 install_tmux_plugin_manager
-install_lunarvim
 echo ''
 echo ''
 
