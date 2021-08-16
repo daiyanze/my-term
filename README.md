@@ -103,7 +103,7 @@ unlink $HOME/.zshrc
 
 ### Neovim
 
-The Neovim version should be higher than 0.5 which can be installed with the [One Command Install](/one-command-install).
+The Neovim version should be higher than 0.5 which can be installed with the [One Command Install](/#one-command-install).
 
 The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim). Added some personal favor customizations.
 
@@ -128,3 +128,8 @@ The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/L
 ## License
 
 MIT
+
+## Known Issues
+
+- Lunarvim Installation on Mac Big Sur via the official install.sh is not working properly.
+  - Temporary workaround: Executing the [One Command Install](/#one-command-install) multiple times will fix it.

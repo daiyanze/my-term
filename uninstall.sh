@@ -3,6 +3,16 @@
 # Exit on command fails
 set -o errexit
 
+read -r -p "Is it okay to continue the uninstallation (make sure to backup config files)? [Y/n]" input
+
+case $input in
+  "");;
+  [yY][eE][sS]|[yY]) echo 'Removing my-term...'; break;;
+  [nN][oO]|[nN]) echo 'exit.'; exit 1; break;;
+  *) echo 'Invalid input (hint: Y/n)'; exit 1;;
+esac
+
+
 remove_deps () {
   # Lunarvim
   sh $HOME/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
@@ -15,6 +25,9 @@ remove_deps () {
 }
 
 remove_symlinks () {
+  # Lunarvim
+  unlink $HOME/.config/lvim/config.lua
+
   # Tmux 
   unlink $HOME/.tmux.conf
   
@@ -29,7 +42,6 @@ remove_my_term () {
   rm -rf $HOME/.config/my-term
 }
 
-echo 'Removing my-term...'
 
 remove_deps
 remove_symlinks
