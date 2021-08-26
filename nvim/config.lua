@@ -5,21 +5,6 @@
 -- Theme Gruvbox
 lvim.colorscheme = 'gruvbox-material'
 
--- Colorscheme for galaxyline
--- Based on sainnhe/gruvbox-material
--- https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim#L200
-local colors = lvim.builtin.galaxyline.colors
-colors.green = '#b0b846'
-colors.purple = '#d3869b'
-colors.magenta = '#db4740' -- bg_red
-colors.orange = '#f28534'
-colors.yellow = '#e9b143'
-colors.red = '#f2594b'
-colors.blue = '#80aa9e'
-colors.cyan = '#8bba7f' -- aqua
-colors.grey = '#928374' -- grey1
-colors.alt_bg = '#32302f' -- bg_statusline1
-
 -- Custom Plugins
 lvim.plugins = {
   -- Theme
