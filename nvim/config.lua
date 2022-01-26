@@ -2,6 +2,8 @@
 ---------- Editor Settings -----------
 --------------------------------------
 
+-- Prettier Format
+lvim.format_on_save = false
 -- Theme Gruvbox
 lvim.colorscheme = 'gruvbox-material'
 
@@ -28,10 +30,26 @@ lvim.plugins = {
   {'andymass/vim-matchup'},
   {'liuchengxu/vista.vim'},
   {'itchyny/vim-cursorword',
-    event = {"BufEnter", "BufNewFile"}
+    event = {'BufEnter', 'BufNewFile'}
   },
-  {"kana/vim-niceblock",
+  {'gpanders/editorconfig.nvim'},
+  {'kana/vim-niceblock',
     opt = true
+  },
+  {'folke/todo-comments.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require("todo-comments").setup {
+        -- The colors are copied from the gruvbox-material "mix" theme
+        colors = {
+          error = { "DiagnosticError", "ErrorMsg", "#db4740" },
+          warning = { "DiagnosticWarning", "WarningMsg", "#e9b143" },
+          info = { "DiagnosticInfo", "#80aa9e" },
+          hint = { "DiagnosticHint", "#b0b846" },
+          default = { "Identifier", "#d3869b" },
+        }
+      }
+    end
   }
 }
 
