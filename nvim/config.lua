@@ -36,6 +36,7 @@ lvim.plugins = {
   {'kana/vim-niceblock',
     opt = true
   },
+  {'tpope/vim-obsession'},
   {'folke/todo-comments.nvim',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
