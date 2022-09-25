@@ -14,8 +14,8 @@ esac
 
 
 remove_deps () {
-  # Lunarvim
-  sh $HOME/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+  # NvChad
+  rm -rf $HOME/.config/nvim/
 
   # Oh my zsh
   rm -rf $HOME/.oh-my-zsh
@@ -25,8 +25,9 @@ remove_deps () {
 }
 
 remove_symlinks () {
-  # Lunarvim
-  unlink $HOME/.config/lvim/config.lua
+  # NvChad
+  unlink $HOME/.config/nvim/lua/custom/chadrc.lua
+  unlink $HOME/.config/nvim/lua/custom
 
   # Tmux 
   unlink $HOME/.tmux.conf

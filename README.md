@@ -5,8 +5,8 @@ My good-looking productive terminal environment integration for MacOS with an ea
 ## Components
 
 - Package Manager: [Homebrew](https://brew.sh)
-- Editor: [Neovim (>= 0.5)](https://neovim.io)
-- Editor Configuration: [LunarVim](https://github.com/ChristianChiarulli/LunarVim) -- Gruvbox
+- Editor: [Neovim (>= 0.7)](https://neovim.io)
+- Editor Configuration: [NvChad](https://github.com/NvChad/NvChad)
 - Shell: [Zsh](https://www.zsh.org) + [Oh-My-Zsh](https://ohmyz.sh)
 - Shell Theme: [Powerlevel10k](https://github.com/romkatv/powerlevel10k) -- pure
 - Multiplexer: [Tmux](https://github.com/tmux/tmux)
@@ -52,8 +52,8 @@ $ git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/cus
 # Install Tmux plugin manager
 $ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
-# Install Lunarvim
-$ sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
+# Install NvChad
+$ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 # Clone this repo to ~/.config/my-term
 $ git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
@@ -61,7 +61,9 @@ $ git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
 # Setup symlink to the config files
 $ ln -s -f $HOME/.config/my-term/zsh/zshrc.config $HOME/.zshrc
 $ ln -s -f $HOME/.config/my-term/tmux/tmux.conf $HOME/.tmux.conf
-$ ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/lvim/config.lua
+$ ln -s -f $HOME/.config/my-term/nvim/chadrc.lua $HOME/.config/nvim/lua/custom/chadrc.lua
+$ ln -s $HOME/.config/my-term/nvim/plugins/ $HOME/.config/nvim/lua/custom
+$ ln -s $HOME/.config/my-term/nvim/core/ $HOME/.config/nvim/lua/custom
 $ ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
 ```
 
@@ -76,9 +78,8 @@ $ sh $HOME/.config/my-term/uninstall.sh
 Or do it manually.
 
 ```sh
-# Lunarvim
-# It can be removed by its own script
-$ sh $HOME/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+# NvChad
+$ rm -rf $HOME/.config/nvim
 
 # Oh my zsh
 $ rm -rf $HOME/.oh-my-zsh
@@ -88,6 +89,10 @@ $ rm -rf $HOME/.tmux
 
 
 # Symbolic Links
+# NvChad
+unlink $HOME/.config/nvim/lua/custom/chadrc.lua
+unlink $HOME/.config/nvim/lua/custom
+
 # Tmux 
 unlink $HOME/.tmux.conf
 
@@ -105,11 +110,7 @@ unlink $HOME/.zshrc
 
 The Neovim version should be higher than 0.5 which can be installed with the [One Command Install](/#one-command-install).
 
-The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim). Added some personal favor customizations.
-
-- [nvim-scrollview](https://github.com/dstein64/nvim-scrollview): Displays a scrollbar
-- [Jenkinsfile syntax](https://github.com/martinda/Jenkinsfile-vim-syntax): Helps highlight Groovy syntax in Jenkinsfile
-- [vim visual multi](https://github.com/mg979/vim-visual-multi): A multiple text selector
+The configuration is based on [NvChad](https://github.com/NvChad/NvChad). Added some personal favor customizations.
 
 ### Tmux
 
@@ -121,15 +122,6 @@ The configuration is based on [LunarVim](https://github.com/ChristianChiarulli/L
 - [Tmux yank](https://github.com/tmux-plugins/tmux-yank): Copy texts to system clipboard
 - [Tmux gruvbox](https://github.com/egel/tmux-gruvbox): A Custom theme (dark) enabled by default
 
-## Key Bindings
-
-(TODO)
-
 ## License
 
 MIT
-
-## Known Issues
-
-- Lunarvim Installation on Mac Big Sur via the official install.sh is not working properly.
-  - Temporary workaround: Executing the [One Command Install](/#one-command-install) multiple times will fix it.

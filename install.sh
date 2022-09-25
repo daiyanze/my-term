@@ -45,13 +45,9 @@ install_my_term () {
     git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
 }
 
-# install lunarvim
-# FIXME: Use rolling for now
-install_lunarvim () {
-    # FIXME: On some OS (e.g Big Sur), /usr/local/bin/ doesn't exist
-    sudo mkdir -p /usr/local/bin
-    # sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)"
-    LVBRANCH=rolling sh -c "$(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)"
+# install NvChad
+install_NvChad () {
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 }
 
 # install homebrew
@@ -122,9 +118,12 @@ setup_configs () {
     ln -s -f $HOME/.config/my-term/tmux/tmux.conf $HOME/.tmux.conf
     echo "Created symlink to $HOME/.tmux.conf"
 
-    # lunarvim (neovim)
-    ln -s -f $HOME/.config/my-term/nvim/config.lua $HOME/.config/lvim/config.lua
-    echo "Created symlink to $HOME/.config/lvim/config.lua"
+    # NvChad (neovim)
+    ln -s -f $HOME/.config/my-term/nvim/chadrc.lua $HOME/.config/nvim/lua/custom/chadrc.lua
+    ln -s $HOME/.config/my-term/nvim/plugins/ $HOME/.config/nvim/lua/custom
+    ln -s $HOME/.config/my-term/nvim/core/ $HOME/.config/nvim/lua/custom
+
+    echo "Created symlink to $HOME/.config/nvim/lua/custom"
 
     # powerlevel10k
     ln -s -f $HOME/.config/my-term/powerlevel10k/p10k.zsh $HOME/.p10k.zsh
@@ -138,7 +137,7 @@ echo ''
 # Installation Processes
 backup
 install_my_term
-install_lunarvim
+install_NvChad
 install_homebrew
 install_oh_my_zsh
 install_tmux_plugin_manager
@@ -160,7 +159,7 @@ echo "press <Prefix> + I (capital) to fetch the plugins ($HOME/.tmux/plugins) fo
 echo '------------'
 echo ''
 
-echo '--- Neovim(Lunarvim) ---'
+echo '--- Neovim ---'
 echo "enter ':PackerInstall' to install the plugins for the first-time of entering Neovim"
 echo '---------------'
 

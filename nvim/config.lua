@@ -19,6 +19,7 @@ lvim.plugins = {
   {'jeffkreeftmeijer/vim-numbertoggle'},
   {'lukas-reineke/indent-blankline.nvim'},
   {'onsails/lspkind-nvim'},
+  {'ray-x/lsp_signature.nvim'},
   {'kdheepak/lazygit.nvim'},
   -- {'sindrets/diffview.nvim'},
   {'windwp/nvim-spectre'},
