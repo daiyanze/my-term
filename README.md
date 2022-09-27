@@ -77,7 +77,7 @@ $ sh $HOME/.config/my-term/uninstall.sh
 Or do it manually.
 
 ```sh
-# NvChad
+# AstroNvim
 $ rm -rf $HOME/.config/nvim
 
 # Oh my zsh
@@ -88,9 +88,8 @@ $ rm -rf $HOME/.tmux
 
 
 # Symbolic Links
-# NvChad
-unlink $HOME/.config/nvim/lua/custom/chadrc.lua
-unlink $HOME/.config/nvim/lua/custom
+# AstroNvim
+unlink $HOME/.config/nvim/lua/user/init.lua
 
 # Tmux 
 unlink $HOME/.tmux.conf
@@ -120,6 +119,11 @@ The configuration is based on [AstroNvim](https://github.com/AstroNvim/AstroNvim
 - [Tmux resurrect](https://github.com/tmux-plugins/tmux-resurrect): Lightweight tmux utils for manipulating sessions
 - [Tmux yank](https://github.com/tmux-plugins/tmux-yank): Copy texts to system clipboard
 - [Tmux gruvbox](https://github.com/egel/tmux-gruvbox): A Custom theme (dark) enabled by default
+
+
+### TODOs
+
+- apply T1d3.json config to iTerm2 via install shell
 
 ## License
 
