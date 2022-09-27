@@ -14,33 +14,32 @@ esac
 
 
 remove_deps () {
-  # NvChad
-  rm -rf $HOME/.config/nvim/
+  # AstroNvim
+  rm -rf "$HOME/.config/nvim/"
 
   # Oh my zsh
-  rm -rf $HOME/.oh-my-zsh
+  rm -rf "$HOME/.oh-my-zsh"
 
   # Tmux
-  rm -rf $HOME/.tmux
+  rm -rf "$HOME/.tmux"
 }
 
 remove_symlinks () {
-  # NvChad
-  unlink $HOME/.config/nvim/lua/custom/chadrc.lua
-  unlink $HOME/.config/nvim/lua/custom
+  # AstroNvim
+  unlink "$HOME/.config/nvim/lua/user/init.lua"
 
   # Tmux 
-  unlink $HOME/.tmux.conf
+  unlink "$HOME/.tmux.conf"
   
   # Power10k
-  unlink $HOME/.p10k.zsh
+  unlink "$HOME/.p10k.zsh"
 
   # Oh my zsh
-  unlink $HOME/.zshrc
+  unlink "$HOME/.zshrc"
 }
 
 remove_my_term () {
-  rm -rf $HOME/.config/my-term
+  rm -rf "$HOME/.config/my-term"
 }
 
 

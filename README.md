@@ -6,10 +6,12 @@ My good-looking productive terminal environment integration for MacOS with an ea
 
 - Package Manager: [Homebrew](https://brew.sh)
 - Editor: [Neovim (>= 0.7)](https://neovim.io)
-- Editor Configuration: [NvChad](https://github.com/NvChad/NvChad)
+- Editor Configuration: [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - Shell: [Zsh](https://www.zsh.org) + [Oh-My-Zsh](https://ohmyz.sh)
 - Shell Theme: [Powerlevel10k](https://github.com/romkatv/powerlevel10k) -- pure
 - Multiplexer: [Tmux](https://github.com/tmux/tmux)
+- Node Version Manager: [nvm](https://github.com/nvm-sh/nvm)
+- Golang Version Manager: [goenv](https://github.com/syndbg/goenv)
 
 ## Screenshots
 
@@ -17,10 +19,6 @@ My good-looking productive terminal environment integration for MacOS with an ea
 ![snapshot](./media/snapshot_2.png)
 
 ## Installation
-
-### Prerequisites
-
-Make sure to install [Node.js](https://nodejs.org/) and [Golang](https://golang.org) before or after the installation. They are used by some plugins for handling debugging or formatting.
 
 ### One Command Install
 
@@ -52,8 +50,9 @@ $ git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/cus
 # Install Tmux plugin manager
 $ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
-# Install NvChad
-$ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+# Install AstroNvim
+$ git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+$ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # Clone this repo to ~/.config/my-term
 $ git clone https://github.com/daiyanze/my-term $HOME/.config/my-term
@@ -108,9 +107,9 @@ unlink $HOME/.zshrc
 
 ### Neovim
 
-The Neovim version should be higher than 0.5 which can be installed with the [One Command Install](/#one-command-install).
+The Neovim version should be higher than 0.7 which can be installed with the [One Command Install](/#one-command-install).
 
-The configuration is based on [NvChad](https://github.com/NvChad/NvChad). Added some personal favor customizations.
+The configuration is based on [AstroNvim](https://github.com/AstroNvim/AstroNvim). Added some personal favor customizations.
 
 ### Tmux
 
