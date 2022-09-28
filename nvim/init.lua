@@ -44,10 +44,6 @@ return {
       ["<leader>tv"] = { "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical split" },
       ["<leader>d"] = "",
 
-      -- Move current line / block with Alt-j/k a la vscode.
-      ["<M-j>"] = ":m .+1<CR>==",
-      ["<M-k>"] = ":m .-2<CR>==",
-
       -- Debugger
       ["<leader>du"] = { '<cmd>PackerLoad nvim-dap-ui<CR> <bar> <cmd>lua require("dapui").toggle()<CR>', desc = "Toggle Dap UI" },
       ["<leader>dc"] = { "<cmd>DapContinue<CR>", desc = "Continue" },
@@ -61,6 +57,16 @@ return {
       ["<leader>dr"] = { '<cmd>lua require("dap").repl.open()<CR>', desc = "Open REPL" },
       ["<leader>da"] = { '<cmd>lua require("dap").repl.open()<CR>', desc = "Run Last" },
       ["<leader>dk"] = { '<cmd>lua require("dapui").eval()<CR>', desc = "Hover Variable" },
+
+      -- Move current line / block with Alt-j/k a la vscode.
+      ["<M-j>"] = ":m .+1<CR>==",
+      ["<M-k>"] = ":m .-2<CR>==",
+    },
+    i = {
+      ["<C-h>"] = { "<Left>", desc = "move left" },
+      ["<C-l>"] = { "<Right>", desc = "move right" },
+      ["<C-j>"] = { "<Down>", desc = "move down" },
+      ["<C-k>"] = { "<Up>", desc = "move up" },
     },
     v = {
       -- Move selected line / block of text in visual mode
@@ -84,10 +90,17 @@ return {
       end
     },
 
+    ['neo-tree'] = {
+      window = {
+        width = 35
+      }
+    },
+
     -- Extra custom plugins
     init = {
       { "sainnhe/gruvbox-material" },
       { "martinda/Jenkinsfile-vim-syntax"},
+      { "gpanders/editorconfig.nvim" },
       { "mg979/vim-visual-multi"},
       { "nacro90/numb.nvim",
         config = function()
