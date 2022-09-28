@@ -4,7 +4,7 @@
 set -o errexit
 
 # create backup folder and move the existed configs
-backup () {
+backup() {
     bkp_dir=$HOME/.my-term.bkp."$(date '+%Y%m%d%H%M%S')"
     mkdir -p "$bkp_dir"
 
@@ -40,19 +40,19 @@ backup () {
 }
 
 # install my-term
-install_my_term () {
+install_my_term() {
     rm -rf "$HOME/.config/my-term"
     git clone https://github.com/daiyanze/my-term "$HOME/.config/my-term"
 }
 
 # install AstroNvim
-install_AstroNvim () {
+install_AstroNvim() {
     git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 # install homebrew
-install_homebrew () {
+install_homebrew() {
     command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
@@ -76,7 +76,7 @@ install_homebrew () {
 }
 
 # install oh-my-zsh
-install_oh_my_zsh () {
+install_oh_my_zsh() {
     echo 'Installing oh-my-zsh...'
 
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -108,12 +108,17 @@ install_oh_my_zsh () {
 # install tmux plugin manager
 install_tmux_plugin_manager () {
     if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+        echo "No Tmux plugin manager found, clone to target directory"
         git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
     fi
 }
 
+install_fonts() {
+    unzip fonts/FiraCode.zip -d ~/Library/Fonts
+}
+
 # Locate config files
-setup_configs () {
+setup_configs() {
     # zshrc
     ln -s -f "$HOME/.config/my-term/zsh/zshrc.config" "$HOME/.zshrc"
     echo "Created symlink to $HOME/.zshrc"
@@ -143,6 +148,7 @@ install_AstroNvim
 install_homebrew
 install_oh_my_zsh
 install_tmux_plugin_manager
+install_fonts
 echo ''
 echo ''
 

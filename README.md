@@ -123,7 +123,8 @@ The configuration is based on [AstroNvim](https://github.com/AstroNvim/AstroNvim
 
 ### TODOs
 
-- apply T1d3.json config to iTerm2 via install shell
+- [ ] apply T1d3.json config to iTerm2 via install shell
+- [ ] colorize debug icon fonts
 
 ## License
 
