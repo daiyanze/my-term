@@ -98,6 +98,9 @@ return {
 
     -- Extra custom plugins
     init = {
+      -- Disabled
+      ["declancm/cinnamon.nvim"] = { disable = true },
+
       { "sainnhe/gruvbox-material" },
       { "martinda/Jenkinsfile-vim-syntax"},
       { "gpanders/editorconfig.nvim" },
@@ -105,6 +108,47 @@ return {
       { "nacro90/numb.nvim",
         config = function()
           require('numb').setup()
+        end
+      },
+      { "petertriho/nvim-scrollbar",
+        config = function()
+          require("scrollbar").setup({
+            handle = {
+              color = "#46413e",
+            },
+            marks = {
+              Search = { color = "#f28534" },
+              Error = { color = "#db4740" },
+              Warn = { color = "#e9b143" },
+              Info = { color = "#80aa9e" },
+              Hint = { color = "#b0b846" },
+              Misc = { color = "#d3869b"},
+            }
+          })
+        end
+      },
+      { "ggandor/lightspeed.nvim",
+        config = function()
+          require('lightspeed').setup{}
+        end
+      },
+      { "folke/todo-comments.nvim",
+        config = function()
+          require('todo-comments').setup({
+            -- The colors are copied from the gruvbox-material "mix" theme
+            colors = {
+              error = { "DiagnosticError", "ErrorMsg", "#db4740" },
+              warning = { "DiagnosticWarning", "WarningMsg", "#e9b143" },
+              info = { "DiagnosticInfo", "#80aa9e" },
+              hint = { "DiagnosticHint", "#b0b846" },
+              default = { "Identifier", "#d3869b" },
+            }
+          })
+        end
+      },
+      { "folke/trouble.nvim",
+        config = function()
+          require('trouble').setup()
         end
       },
       { "ianding1/leetcode.vim" },
