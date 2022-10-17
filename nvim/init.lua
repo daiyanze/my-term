@@ -4,13 +4,13 @@ return {
   options = {
     g = {
       -- Theme gruvbox-material
-      gruvbox_material_palette = 'mix',
+      gruvbox_material_palette = "mix",
       gruvbox_material_enable_italic = 1,
       -- gruvbox_material_enable_bold = 1,
 
       -- Leetcode
-      leetcode_solution_filetype = 'javascript',
-      leetcode_browser = 'chrome',
+      leetcode_solution_filetype = "javascript",
+      leetcode_browser = "chrome",
     }
   },
 
@@ -42,21 +42,21 @@ return {
       -- Override
       ["<leader>th"] = { "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
       ["<leader>tv"] = { "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical split" },
-      ["<leader>d"] = "",
+      ["<leader>d"] = "Debug",
 
       -- Debugger
-      ["<leader>du"] = { '<cmd>PackerLoad nvim-dap-ui<CR> <bar> <cmd>lua require("dapui").toggle()<CR>', desc = "Toggle Dap UI" },
+      ["<leader>du"] = { "<cmd>PackerLoad nvim-dap-ui<CR> <bar> <cmd>lua require('dapui').toggle()<CR>", desc = "Toggle Dap UI" },
       ["<leader>dc"] = { "<cmd>DapContinue<CR>", desc = "Continue" },
       ["<leader>di"] = { "<cmd>DapStepInto<CR>", desc = "Step Into" },
       ["<leader>do"] = { "<cmd>DapStepOut<CR>", desc = "Step Out" },
       ["<leader>dv"] = { "<cmd>DapStepOver<CR>", desc = "Step Over" },
       ["<leader>dt"] = { "<cmd>DapToggleBreakpoint<CR>", desc = "Toggle Breakpoint" },
       ["<leader>dn"] = { "<cmd>DapTerminate<CR>", desc = "Terminate" },
-      ["<leader>ds"] = { '<cmd>lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Breakpoint condition: "))<CR>', desc = "Set Breakpoint Condition" },
-      ["<leader>dl"] = { '<cmd>lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', desc = "Log point message" },
-      ["<leader>dr"] = { '<cmd>lua require("dap").repl.open()<CR>', desc = "Open REPL" },
-      ["<leader>da"] = { '<cmd>lua require("dap").repl.open()<CR>', desc = "Run Last" },
-      ["<leader>dk"] = { '<cmd>lua require("dapui").eval()<CR>', desc = "Hover Variable" },
+      ["<leader>ds"] = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Breakpoint condition: '))<CR>", desc = "Set Breakpoint Condition" },
+      ["<leader>dl"] = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", desc = "Log point message" },
+      ["<leader>dr"] = { "<cmd>lua require('dap').repl.open()<CR>", desc = "Open REPL" },
+      ["<leader>da"] = { "<cmd>lua require('dap').repl.open()<CR>", desc = "Run Last" },
+      ["<leader>dk"] = { "<cmd>lua require('dapui').eval()<CR>", desc = "Hover Variable" },
 
       -- Move current line / block with Alt-j/k a la vscode.
       ["<M-j>"] = ":m .+1<CR>==",
@@ -90,7 +90,7 @@ return {
       end
     },
 
-    ['neo-tree'] = {
+    ["neo-tree"] = {
       window = {
         width = 35
       }
@@ -107,7 +107,7 @@ return {
       { "mg979/vim-visual-multi"},
       { "nacro90/numb.nvim",
         config = function()
-          require('numb').setup()
+          require("numb").setup()
         end
       },
       { "petertriho/nvim-scrollbar",
@@ -129,12 +129,12 @@ return {
       },
       { "ggandor/lightspeed.nvim",
         config = function()
-          require('lightspeed').setup{}
+          require("lightspeed").setup{}
         end
       },
       { "folke/todo-comments.nvim",
         config = function()
-          require('todo-comments').setup({
+          require("todo-comments").setup({
             -- The colors are copied from the gruvbox-material "mix" theme
             colors = {
               error = { "DiagnosticError", "ErrorMsg", "#db4740" },
@@ -148,24 +148,26 @@ return {
       },
       { "folke/trouble.nvim",
         config = function()
-          require('trouble').setup()
+          require("trouble").setup()
         end
       },
       { "ianding1/leetcode.vim" },
       { "mattn/emmet-vim" },
       { "mfussenegger/nvim-dap",
+        opt = true,
         config = function()
-          vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})
-          vim.fn.sign_define('DapBreakpointCondition', {text='', texthl='', linehl='', numhl=''})
-          vim.fn.sign_define('DapBreakpointRejected', {text='', texthl='', linehl='', numhl=''})
-          vim.fn.sign_define('DapLogPoint', {text='קּ', texthl='', linehl='', numhl=''})
-          vim.fn.sign_define('DapStopped', {text='ﱢ', texthl='', linehl='', numhl=''})
+          vim.fn.sign_define("DapBreakpoint", {text="", texthl="", linehl="", numhl=""})
+          vim.fn.sign_define("DapBreakpointCondition", {text="", texthl="", linehl="", numhl=""})
+          vim.fn.sign_define("DapBreakpointRejected", {text="", texthl="", linehl="", numhl=""})
+          vim.fn.sign_define("DapLogPoint", {text="קּ", texthl="", linehl="", numhl=""})
+          vim.fn.sign_define("DapStopped", {text="ﱢ", texthl="", linehl="", numhl=""})
         end
       },
       { "rcarriga/nvim-dap-ui",
         opt = true,
+        requires = {"mfussenegger/nvim-dap"},
         config = function()
-          require('dapui').setup({
+          require("dapui").setup({
             layouts = {
               {
                 elements = {
@@ -190,16 +192,17 @@ return {
         end
       },
       { "microsoft/vscode-js-debug",
+        opt = true,
         run = "npm install --legacy-peer-deps && npm run compile",
       },
       { "mxsdev/nvim-dap-vscode-js",
-        requires = {'microsoft/vscode-js-debug'},
+        requires = {"microsoft/vscode-js-debug"},
         opt = true,
         config = function()
           require("dap-vscode-js").setup({
             node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
             -- debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation. 
-            adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' }, -- which adapters to register in nvim-dap
+            adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
           })
 
           for _, language in ipairs({ "typescript", "javascript" }) do
@@ -215,14 +218,17 @@ return {
                 type = "pwa-node",
                 request = "attach",
                 name = "Attach",
-                processId = require'dap.utils'.pick_process,
+                processId = require("dap.utils").pick_process,
                 cwd = "${workspaceFolder}",
               }
             }
           end
         end
       },
-      { "theHamsta/nvim-dap-virtual-text" },
+      { 
+        "theHamsta/nvim-dap-virtual-text",
+        opt = true,
+      },
     },
   },
 }
