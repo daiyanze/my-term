@@ -47,6 +47,8 @@ install_my_term() {
 
 # install AstroNvim
 install_AstroNvim() {
+    mv -rf "$HOME/.config/nvim/" "$HOME/.config/nvim_bkp/"
+    mkdir -p "$HOME/.config/nvim/lua/user/"
     git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
@@ -114,7 +116,7 @@ install_tmux_plugin_manager () {
 }
 
 install_fonts() {
-    unzip fonts/FiraCode.zip -d ~/Library/Fonts
+    unzip $HOME/.config/my-term/fonts/FiraCode.zip -d ~/Library/Fonts
 }
 
 # Locate config files
@@ -128,8 +130,7 @@ setup_configs() {
     echo "Created symlink to $HOME/.tmux.conf"
 
     # AstroNvim (neovim)
-    ln -s -f "$HOME/.config/my-term/nvim/init.lua" "$HOME/.config/nvim/user/init.lua"
-
+    ln -s -f "$HOME/.config/my-term/nvim/init.lua" "$HOME/.config/nvim/lua/user/init.lua"
     echo "Created symlink to $HOME/.config/nvim/user/init.lua"
 
     # powerlevel10k
@@ -144,8 +145,8 @@ echo ''
 # Installation Processes
 backup
 install_my_term
-install_AstroNvim
 install_homebrew
+install_AstroNvim
 install_oh_my_zsh
 install_tmux_plugin_manager
 install_fonts
