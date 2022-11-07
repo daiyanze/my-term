@@ -105,6 +105,7 @@ return {
       { "martinda/Jenkinsfile-vim-syntax"},
       { "gpanders/editorconfig.nvim" },
       { "mg979/vim-visual-multi"},
+      { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" },
       { "nacro90/numb.nvim",
         config = function()
           require("numb").setup()
